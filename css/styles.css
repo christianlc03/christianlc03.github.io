@@ -1,4 +1,6 @@
-/* Reset básico */
+/* ===================================
+   RESET BÁSICO
+=================================== */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +14,9 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Menu */
+/* ===================================
+   MENÚ DE NAVEGACIÓN (HEADER)
+=================================== */
 header {
     background-color: #222;
     color: #fff;
@@ -46,35 +50,49 @@ header {
 }
 
 /* Dropdown */
-.dropdown:hover .submenu {
-    display: block;
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
+/* Submenú oculto por defecto */
 .submenu {
     display: none;
     position: absolute;
     background-color: #333;
-    top: 2.8rem;
+    top: 100%;
     left: 0;
-    min-width: 120px;
+    min-width: 140px;
     border-radius: 4px;
+    z-index: 1000;
+    flex-direction: row; /* Puedes cambiar a column si quieres vertical */
+}
+
+/* Mostrar submenú al pasar el mouse */
+.dropdown:hover .submenu {
+    display: block;
 }
 
 .submenu li {
     margin: 0;
     padding: 0.5rem 1rem;
+    white-space: nowrap;
 }
 
 .submenu li a {
     color: #ddd;
     font-weight: normal;
+    text-decoration: none;
+    display: block;
 }
 
 .submenu li a:hover {
     color: #1abc9c;
 }
 
-/* Intro Section */
+/* ===================================
+   SECCIÓN INTRO (VIDEO Y TEXTO)
+=================================== */
 .intro-section {
     margin-top: 70px; /* para que no tape el menú fijo */
     display: flex;
@@ -86,8 +104,11 @@ header {
 }
 
 .video-container video {
-    width: 480px;
-    max-width: 100%;
+    height: auto;
+    max-height: 500px; /* o el valor que te parezca mejor */
+    width: auto;
+    object-fit: cover;
+    align-self: flex-start; /* para que no se estire del todo */
     border-radius: 8px;
 }
 
@@ -106,7 +127,9 @@ header {
     color: #555;
 }
 
-/* Botones proyectos */
+/* ===================================
+   BOTONES DE PROYECTOS
+=================================== */
 .botones-proyectos {
     display: flex;
     justify-content: center;
@@ -135,32 +158,41 @@ header {
     transform: scale(1.05);
 }
 
-/* Fondo imágenes (ajusta las URLs) */
+/* Imágenes de fondo (ajusta las URLs) */
 .unity-btn {
-    background: url('fondo-unity.jpg') center center/cover no-repeat;
+    background: url('../images/fondo_boton_unity.jpg') center center/cover no-repeat;
 }
 
 .blender-btn {
-    background: url('fondo-blender.jpg') center center/cover no-repeat;
+    background: url('../images/fondo_boton_blender.png') center center/cover no-repeat;
 }
 
 .overlay-text {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     padding: 0.5rem 1.5rem;
     border-radius: 8px;
 }
 
-/* Redes sociales */
+/* ===================================
+   SECCIÓN REDES SOCIALES
+=================================== */
 .redes-sociales {
-    text-align: center;
+    text-align: left;
     padding: 3rem 1rem;
     background: white;
 }
 
 .redes-sociales h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #1abc9c;
+    color: black;
+    padding-left: 2rem; /* Ajusta el valor según lo que necesites */
+}
+
+.iconos {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
 }
 
 .iconos a {
@@ -169,28 +201,85 @@ header {
 }
 
 .iconos img {
-    width: 50px;
-    height: 50px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
+    width: 150px;
+    height: 150px;
 }
 
 .iconos a:hover img {
     filter: none;
 }
 
-/* Responsivo */
+/* ===================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+=================================== */
 @media (max-width: 768px) {
     .intro-section {
         flex-direction: column;
         text-align: center;
     }
+
     .botones-proyectos {
         flex-direction: column;
         gap: 1.5rem;
     }
+
     .btn-proyecto {
         width: 90%;
         height: 150px;
     }
+}
+
+/* --- Estilos específicos para la página Sobre mí --- */
+
+body.sobre-mi {
+    background-color: black; /* fondo negro */
+    color: #111111;
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    margin: 0;
+}
+
+.sobre-mi .quote {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;/* Ajusta este valor según la altura de tu header */
+    margin-bottom: 3rem;
+    color: white; /* manteniendo color verde que usas */
+}
+
+.sobre-mi .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.sobre-mi .content img {
+    height: auto;
+    max-height: 500px; /* o el valor que te parezca mejor */
+    width: auto;
+    object-fit: cover;
+    align-self: flex-start; /* para que no se estire del todo */
+    border-radius: 8px;
+}
+
+.sobre-mi .text-right {
+    flex: 1; /* que el texto ocupe todo lo que pueda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-mi .text-right h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    color: white; /* ajusta según tu fondo negro */
+}
+
+.sobre-mi .text-right p {
+    font-size: 1.2rem;
+    color: white; /* texto más claro para fondo oscuro */
+    text-align: left;
 }
