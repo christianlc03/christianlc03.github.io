@@ -1,0 +1,196 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f5f5f5;
+}
+
+/* Menu */
+header {
+    background-color: #222;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.menu ul li {
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu ul li:hover > a {
+    color: #1abc9c;
+}
+
+/* Dropdown */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 2.8rem;
+    left: 0;
+    min-width: 120px;
+    border-radius: 4px;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 0.5rem 1rem;
+}
+
+.submenu li a {
+    color: #ddd;
+    font-weight: normal;
+}
+
+.submenu li a:hover {
+    color: #1abc9c;
+}
+
+/* Intro Section */
+.intro-section {
+    margin-top: 70px; /* para que no tape el menú fijo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background: white;
+}
+
+.video-container video {
+    width: 480px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.intro-text {
+    max-width: 500px;
+}
+
+.intro-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1abc9c;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Botones proyectos */
+.botones-proyectos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+
+.btn-proyecto {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-proyecto:hover {
+    transform: scale(1.05);
+}
+
+/* Fondo imágenes (ajusta las URLs) */
+.unity-btn {
+    background: url('fondo-unity.jpg') center center/cover no-repeat;
+}
+
+.blender-btn {
+    background: url('fondo-blender.jpg') center center/cover no-repeat;
+}
+
+.overlay-text {
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+/* Redes sociales */
+.redes-sociales {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: white;
+}
+
+.redes-sociales h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1abc9c;
+}
+
+.iconos a {
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+.iconos img {
+    width: 50px;
+    height: 50px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.iconos a:hover img {
+    filter: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .botones-proyectos {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .btn-proyecto {
+        width: 90%;
+        height: 150px;
+    }
+}

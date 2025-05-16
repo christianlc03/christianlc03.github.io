@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Básica</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Aquí podrías añadir algún icono para las redes o usar fontawesome -->
 </head>
 <body>
-    <h1>Bienvenido a Mi Página</h1>
-    <p>Este es un ejemplo básico de HTML.</p>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Proyectos ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#unity">Unity</a></li>
+                        <li><a href="#blender">Blender</a></li>
+                    </ul>
+                </li>
+                <li><a href="#sobremi">Sobre mí</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="intro-section">
+        <div class="video-container">
+            <video src="demo_reel.mp4" controls></video>
+        </div>
+        <div class="intro-text">
+            <h1>Hola, soy [Tu Nombre]</h1>
+            <p>Este portafolio muestra mis proyectos y habilidades en Unity y Blender.</p>
+        </div>
+    </section>
+
+    <section class="botones-proyectos">
+        <a href="#unity" class="btn-proyecto unity-btn">
+            <div class="overlay-text">Unity</div>
+        </a>
+        <a href="#blender" class="btn-proyecto blender-btn">
+            <div class="overlay-text">Blender</div>
+        </a>
+    </section>
+
+    <section id="redes" class="redes-sociales">
+        <h2>Sígueme en mis redes sociales</h2>
+        <div class="iconos">
+            <a href="https://www.artstation.com/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="ArtStation">
+                <img src="icon-artstation.svg" alt="ArtStation" />
+            </a>
+            <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="icon-instagram.svg" alt="Instagram" />
+            </a>
+            <a href="curriculum.pdf" target="_blank" rel="noopener noreferrer" aria-label="Currículum PDF">
+                <img src="icon-pdf.svg" alt="Currículum" />
+            </a>
+        </div>
+    </section>
 </body>
 </html>
