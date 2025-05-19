@@ -102,35 +102,38 @@ header {
    SECCIÓN INTRO (VIDEO Y TEXTO)
 =================================== */
 .intro-section {
-    margin-top: 70px; /* para que no tape el menú fijo */
+    margin-top: 100px; /* para que no tape el menú fijo */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    gap: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5rem;
+    gap: 10rem;
     background: white;
 }
 
 .video-container video {
+    width: 100%;
     height: auto;
-    max-height: 500px; /* o el valor que te parezca mejor */
-    width: auto;
-    object-fit: cover;
-    align-self: flex-start; /* para que no se estire del todo */
+    max-height: 600px;
+    object-fit: contain;
     border-radius: 8px;
 }
 
+/*
 .intro-text {
     max-width: 500px;
 }
+*/
 
 .intro-text h1 {
+    max-width: 900px;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #1abc9c;
 }
 
 .intro-text p {
+    max-width: 900px;
     font-size: 1.2rem;
     color: #555;
 }
@@ -147,8 +150,8 @@ header {
 
 .btn-proyecto {
     position: relative;
-    width: 300px;
-    height: 180px;
+    width: 1200px;
+    height: 600px;
     color: white;
     font-size: 2rem;
     font-weight: bold;
@@ -209,8 +212,9 @@ header {
 }
 
 .iconos img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: auto;
+    max-width: 100%;
 }
 
 .iconos a:hover img {
@@ -223,7 +227,7 @@ header {
 @media (max-width: 768px) {
     .intro-section {
         flex-direction: column;
-        text-align: center;
+        text-align: start;
     }
 
     .botones-proyectos {
@@ -235,6 +239,60 @@ header {
         width: 90%;
         height: 150px;
     }
+
+    .iconos img{
+        width: 80px;
+    }
+
+    .video-container video {
+        max-height: 250px;
+    }
+
+    .intro-text h1 {
+    max-width: 900px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1abc9c;
+    }
+
+    .intro-text p {
+    max-width: 900px;
+    font-size: 1.2rem;
+    color: #555;
+    }
+
+    /* ----Estilos específicos para la página Sobre mí RESPONSIVOS --- */
+    .sobre-mi .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
+    margin-right: 0;
+  }
+
+  .sobre-mi .content img {
+    max-width: 125%;
+    height: auto;
+    max-height: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .sobre-mi .text-right {
+    width: 130%;
+    padding: 1rem;
+  }
+
+  .sobre-mi .text-right h2,
+  .sobre-mi .text-right p {
+    text-align: start;
+  }
+
+  .sobre-mi .quote {
+    font-size: 2rem; /* reduce tamaño para móviles */
+    margin-top: 70px;
+    margin-bottom: 2rem;
+  }
 }
 
 /* --- Estilos específicos para la página Sobre mí --- */
@@ -243,7 +301,6 @@ body.sobre-mi {
     background-color: black; /* fondo negro */
     color: #111111;
     font-family: Arial, sans-serif;
-    padding: 2rem;
     margin: 0;
 }
 
@@ -259,21 +316,22 @@ body.sobre-mi {
 .sobre-mi .content {
     display: flex;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 10rem;
     padding: 2rem;
+    margin-right: 4rem;
 }
 
 .sobre-mi .content img {
     height: auto;
-    max-height: 500px; /* o el valor que te parezca mejor */
-    width: auto;
+    max-height: 900px; /* o el valor que te parezca mejor */
+    width: 1000px;
     object-fit: cover;
     align-self: flex-start; /* para que no se estire del todo */
     border-radius: 8px;
 }
 
 .sobre-mi .text-right {
-    flex: 1; /* que el texto ocupe todo lo que pueda */
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
