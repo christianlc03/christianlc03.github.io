@@ -90,6 +90,14 @@ header {
     color: #1abc9c;
 }
 
+.menu ul li .submenu {
+    display: none;
+}
+
+.menu ul li:hover .submenu {
+    display: block;
+}
+
 /* ===================================
    SECCIÓN INTRO (VIDEO Y TEXTO)
 =================================== */
