@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Aquí podrías añadir algún icono para las redes o usar fontawesome -->
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+              <li><a href="../index.html">Inicio</a></li>
+              <li class="dropdown">
+                <a href="#">Proyectos ▼</a>
+                <ul class="submenu">
+                  <li><a href="../pages/proyectos_unity.html">Unity</a></li>
+                  <li><a href="../pages/proyectos_blender.html">Blender</a></li>
+                </ul>
+              </li>
+              <li><a href="../pages/sobre_mi.html">Sobre mí</a></li>
+            </ul>
+          </nav>
+    </header>
+
+    <section class="proyecto-section">
+  <div class="galeria-container">
+    <button class="flecha izquierda">←</button>
+    <img src="../images/Proyectos_Blender/Hollow_Knight/render1.png" alt="Proyecto Blender 1" class="imagen-activa" />
+    <button class="flecha derecha">→</button>
+  </div>
+
+  <div class="descripcion-proyecto">
+    <h2>Modelo 3D Hollow Knight</h2>
+    <p>
+      Breve descripción del proyecto: herramientas usadas, el objetivo, algún desafío técnico o creativo, etc.
+    </p>
+  </div>
+</section>
+
+<script>
+  const imagenes = [
+    "../images/Proyectos_Blender/Hollow_Knight/render1.png",
+    "../images/Proyectos_Blender/Hollow_Knight/render2.png"
+  ];
+
+  let indice = 0;
+
+  const imagen = document.querySelector(".imagen-activa");
+  const btnIzq = document.querySelector(".flecha.izquierda");
+  const btnDer = document.querySelector(".flecha.derecha");
+
+  btnIzq.addEventListener("click", () => {
+    indice = (indice - 1 + imagenes.length) % imagenes.length;
+    imagen.src = imagenes[indice];
+  });
+
+  btnDer.addEventListener("click", () => {
+    indice = (indice + 1) % imagenes.length;
+    imagen.src = imagenes[indice];
+  });
+</script>
+
+</body>

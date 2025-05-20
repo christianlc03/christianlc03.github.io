@@ -298,7 +298,7 @@ header {
 /* --- Estilos específicos para la página Sobre mí --- */
 
 body.sobre-mi {
-    background-color: black; /* fondo negro */
+    background-color: #f5f5f5; /* fondo negro */
     color: #111111;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -310,15 +310,16 @@ body.sobre-mi {
     text-align: center;
     margin-top: 100px;/* Ajusta este valor según la altura de tu header */
     margin-bottom: 3rem;
-    color: white; /* manteniendo color verde que usas */
+    color: black; /* manteniendo color verde que usas */
 }
 
 .sobre-mi .content {
+    background-color: white;
     display: flex;
     align-items: flex-start;
     gap: 10rem;
     padding: 2rem;
-    margin-right: 4rem;
+    
 }
 
 .sobre-mi .content img {
@@ -341,11 +342,73 @@ body.sobre-mi {
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: left;
-    color: white; /* ajusta según tu fondo negro */
+    color: #1abc9c; /* ajusta según tu fondo negro */
 }
 
 .sobre-mi .text-right p {
     font-size: 1.2rem;
-    color: white; /* texto más claro para fondo oscuro */
+    color: #555; /* texto más claro para fondo oscuro */
     text-align: left;
 }
+
+/* --- Estilos específicos para la página proyectos Unity o Blender --- */
+
+.proyecto-section {
+  display: flex;
+  align-items: flex-start;          /* Alineación vertical arriba */
+  justify-content: flex-start;      /* Alineación horizontal a la izquierda */
+  gap: 4rem;                        /* Espacio entre imagen y texto */
+  padding: 4rem 2rem;
+  max-width: 1600px;
+  margin-top: 2rem;
+}
+
+.galeria-container {
+  position: relative;
+  width: 1066px;
+  height: 600px;
+  margin-top: 2rem;
+  margin-left: 2rem; /* margen opcional si quieres aún más separación del borde izquierdo */
+}
+
+.galeria-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.flecha.izquierda {
+  left: 10px;
+}
+
+.flecha.derecha {
+  right: 10px;
+}
+
+.descripcion-proyecto {
+  margin-top: 3rem; /*  margen desde arriba para el texto incluido el texto chico de abajo */
+  max-width: 500px;
+  font-size: 1.2rem;
+}
+
+.descripcion-proyecto h2 {
+  color: #1abc9c;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
