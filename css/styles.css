@@ -26,11 +26,11 @@ header {
     z-index: 1000;
 }
 
-.menu ul {
-    list-style: none;
+.menu{
     display: flex;
-    justify-content: center;
-    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
 }
 
 .menu ul li {
@@ -49,11 +49,21 @@ header {
     color: #1abc9c;
 }
 
+.menu-items{
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto; /* centra horizontalmente */
+  padding: 1rem 0;
+  justify-content: center;
+  flex: 1; /* toma el espacio disponible */
+}
+
 /*  CLASE PARA EL LOGO QUE ESTARA EN EL MENU*/
 .logo img {
   height: 100%; /* ocupará todo el alto del menú */
   display: block;
-  max-width: 100px;
+  max-width: 50px;
 }
 
 /* Dropdown */
