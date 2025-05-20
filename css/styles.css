@@ -49,6 +49,13 @@ header {
     color: #1abc9c;
 }
 
+/*  CLASE PARA EL LOGO QUE ESTARA EN EL MENU*/
+.logo img {
+  height: 100%; /* ocupará todo el alto del menú */
+  display: block;
+  max-width: 100px;
+}
+
 /* Dropdown */
 .dropdown {
     position: relative;
@@ -411,4 +418,3 @@ body.sobre-mi {
   margin-bottom: 1rem;
   font-size: 2rem;
 }
-
