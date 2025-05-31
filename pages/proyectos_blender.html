@@ -26,42 +26,118 @@
             </ul>
           </nav>
     </header>
+<section class="proyecto-section">
+  <div class="proyecto-item">
+    <div class="galeria-container" data-imagenes='[
+  "../images/Proyectos_Blender/Hollow_Knight/render1.png",
+  "../videos/Proyectos_Blender/Hollow_Knight/thehollowknight.mp4"
+]'>
+  <button class="flecha izquierda">←</button>
+  <div class="contenido-activo"></div>
+  <button class="flecha derecha">→</button>
+</div>
 
-    <section class="proyecto-section">
-  <div class="galeria-container">
-    <button class="flecha izquierda">←</button>
-    <img src="../images/Proyectos_Blender/Hollow_Knight/render1.png" alt="Proyecto Blender 1" class="imagen-activa" />
-    <button class="flecha derecha">→</button>
+    <div class="descripcion-proyecto">
+      <h2>Modelo 3D Hollow Knight</h2>
+      <p>Realice este modelo 3d para usarlo como asset en un prototipo de runner 2d que hice en unity.</p>
+    </div>
+    </div>
+
+  <!-- Otro proyecto debajo -->
+<div class="proyecto-item">
+<div class="galeria-container" data-imagenes='[
+  "../images/Proyectos_Blender/Cuchillo_Mariposa/render_expositorio.png",
+  "../videos/Proyectos_Blender/Cuchillo_Mariposa/animacion_cuchillo.mp4",
+  "../videos/Proyectos_Blender/Cuchillo_Mariposa/animacion_mostrar.mp4"
+]'>
+  <button class="flecha izquierda">←</button>
+  <div class="contenido-activo"></div>
+  <button class="flecha derecha">→</button>
+</div>
+
+    <div class="descripcion-proyecto">
+      <h2>Cuchillo Mariposa Estilo Valorant</h2>
+      <p>
+Para este proyecto decidí buscar en artstation concepts art de cuchillos del valorant, vi uno que me gusto mucho de @vngbin.art, lo modele y texturice en blender y después les hice una animación de como se vería en el juego.</p>
+    </div>
+    <!-- misma estructura que el anterior -->
   </div>
 
-  <div class="descripcion-proyecto">
-    <h2>Modelo 3D Hollow Knight</h2>
-    <p>
-      Breve descripción del proyecto: herramientas usadas, el objetivo, algún desafío técnico o creativo, etc.
-    </p>
+    <!-- Otro proyecto debajo -->
+<div class="proyecto-item">
+<div class="galeria-container" data-imagenes='[
+  "../images/Proyectos_Blender/Estadio_SevillaFC/render1.png"
+]'>
+  <button class="flecha izquierda">←</button>
+  <div class="contenido-activo"></div>
+  <button class="flecha derecha">→</button>
+</div>
+
+    <div class="descripcion-proyecto">
+      <h2>Estadio Ramón Sánchez-Pizjuán con el tercer anillo</h2>
+      <p>
+En este proyecto le creé mediante el programa fSpy y Blender un tercer anillo al estadio actual del Sevilla FC, y para integrarlo mejor hice la cubierta del estadio adaptandola al nuevo anillo.</p>
+    </div>
+    <!-- misma estructura que el anterior -->
   </div>
+
 </section>
 
 <script>
-  const imagenes = [
-    "../images/Proyectos_Blender/Hollow_Knight/render1.png",
-    "../images/Proyectos_Blender/Hollow_Knight/render2.png"
-  ];
+  document.querySelectorAll(".galeria-container").forEach((galeria) => {
+    const archivos = JSON.parse(galeria.getAttribute("data-imagenes"));
+    let indice = 0;
 
-  let indice = 0;
+    const contenido = galeria.querySelector(".contenido-activo");
+    const btnIzq = galeria.querySelector(".flecha.izquierda");
+    const btnDer = galeria.querySelector(".flecha.derecha");
 
-  const imagen = document.querySelector(".imagen-activa");
-  const btnIzq = document.querySelector(".flecha.izquierda");
-  const btnDer = document.querySelector(".flecha.derecha");
+      // Ocultar flechas si solo hay 1 o menos archivos
+  if (archivos.length <= 1) {
+    btnIzq.style.display = "none";
+    btnDer.style.display = "none";
+  } else {
+    btnIzq.style.display = ""; // mostrar si tenía estilo inline oculto antes
+    btnDer.style.display = "";
+  }
 
-  btnIzq.addEventListener("click", () => {
-    indice = (indice - 1 + imagenes.length) % imagenes.length;
-    imagen.src = imagenes[indice];
-  });
+    function cargarArchivo(i) {
+      const archivo = archivos[i];
+      const extension = archivo.split('.').pop().toLowerCase();
 
-  btnDer.addEventListener("click", () => {
-    indice = (indice + 1) % imagenes.length;
-    imagen.src = imagenes[indice];
+      contenido.innerHTML = ""; // limpiar contenido
+
+      if (["mp4", "webm", "ogg"].includes(extension)) {
+        // Es un video
+        const video = document.createElement("video");
+        video.src = archivo;
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.classList.add("media-activa"); //agregar clase
+        contenido.appendChild(video);
+      } else {
+        // Es una imagen
+        const img = document.createElement("img");
+        img.src = archivo;
+        img.alt = "...";
+        img.classList.add("media-activa"); //agregar clase
+        contenido.appendChild(img);
+      }
+    }
+
+    btnIzq.addEventListener("click", () => {
+      indice = (indice - 1 + archivos.length) % archivos.length;
+      cargarArchivo(indice);
+    });
+
+    btnDer.addEventListener("click", () => {
+      indice = (indice + 1) % archivos.length;
+      cargarArchivo(indice);
+    });
+
+    // Carga inicial
+    cargarArchivo(indice);
   });
 </script>
 

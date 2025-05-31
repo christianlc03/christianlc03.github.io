@@ -28,40 +28,86 @@
     </header>
 
     <section class="proyecto-section">
-  <div class="galeria-container">
-    <button class="flecha izquierda">←</button>
-    <img src="../images/Proyectos_Blender/Hollow_Knight/render1.png" alt="Proyecto Blender 1" class="imagen-activa" />
-    <button class="flecha derecha">→</button>
-  </div>
+  <div class="proyecto-item">
+    <div class="galeria-container" data-imagenes='[
+  "../images/Proyectos_Unity/Yamp-Ran/wallpaper.png",
+  "../images/Proyectos_Unity/Yamp-Ran/caratula.png",
+  "../videos/Proyectos_Unity/Yamp-Ran/video_marketing.mp4"
+]'>
+  <button class="flecha izquierda">←</button>
+  <div class="contenido-activo"></div>
+  <button class="flecha derecha">→</button>
+</div>
 
-  <div class="descripcion-proyecto">
-    <h2>Nombre del Proyecto</h2>
-    <p>
-      Breve descripción del proyecto: herramientas usadas, el objetivo, algún desafío técnico o creativo, etc.
-    </p>
-  </div>
+    <div class="descripcion-proyecto">
+      <h2>Yamp-Ran: Fractured</h2>
+      <p>En esta ocasión este juego fue para el Mangafest de Sevilla 2024 y lo hice junto a 8 compañeros durante el grado de especialización de videojuegos y realidad virtual en el IES Velázquez.<br><br>Trabaje en la parte de programación del juego desarrollando por ejemplo el movimiento de la cámara, la zona de muerte si te sales de esta, uniendo todas las partes en unity, crear un sistema que guardara quien es el ganador de la partida dependiendo de si eres el ultimo en pie o si has llegado a la meta y montar las animaciones junto al animator de los personas.<br><br>
+También he montado una especie de caratula de ps3 a modo de publicidad, y un fondo de pantalla que también lo adjuntare aquí, pongo el enlace a la pagina para que lo podáis probar.
+Tuvimos 1 mes para desarrollar el juego y presentarlo.<br><br> Si quieres entrar en la página de itch.io para jugarlo, <a href="https://lorrao3.itch.io/yamp-ran" target="_blank" rel="noopener noreferrer">click aquí</a>.</p>
+</p>
+    </div>
+    </div>
+
+  <!-- Otro proyecto debajo -->
+
+
 </section>
 
 <script>
-  const imagenes = [
-    "../images/Proyectos_Blender/Hollow_Knight/render1.png",
-    "../images/Proyectos_Blender/Hollow_Knight/render2.png"
-  ];
+  document.querySelectorAll(".galeria-container").forEach((galeria) => {
+    const archivos = JSON.parse(galeria.getAttribute("data-imagenes"));
+    let indice = 0;
 
-  let indice = 0;
+    const contenido = galeria.querySelector(".contenido-activo");
+    const btnIzq = galeria.querySelector(".flecha.izquierda");
+    const btnDer = galeria.querySelector(".flecha.derecha");
 
-  const imagen = document.querySelector(".imagen-activa");
-  const btnIzq = document.querySelector(".flecha.izquierda");
-  const btnDer = document.querySelector(".flecha.derecha");
+      // Ocultar flechas si solo hay 1 o menos archivos
+  if (archivos.length <= 1) {
+    btnIzq.style.display = "none";
+    btnDer.style.display = "none";
+  } else {
+    btnIzq.style.display = ""; // mostrar si tenía estilo inline oculto antes
+    btnDer.style.display = "";
+  }
 
-  btnIzq.addEventListener("click", () => {
-    indice = (indice - 1 + imagenes.length) % imagenes.length;
-    imagen.src = imagenes[indice];
-  });
+    function cargarArchivo(i) {
+      const archivo = archivos[i];
+      const extension = archivo.split('.').pop().toLowerCase();
 
-  btnDer.addEventListener("click", () => {
-    indice = (indice + 1) % imagenes.length;
-    imagen.src = imagenes[indice];
+      contenido.innerHTML = ""; // limpiar contenido
+
+      if (["mp4", "webm", "ogg"].includes(extension)) {
+        // Es un video
+        const video = document.createElement("video");
+        video.src = archivo;
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.classList.add("media-activa"); //agregar clase
+        contenido.appendChild(video);
+      } else {
+        // Es una imagen
+        const img = document.createElement("img");
+        img.src = archivo;
+        img.alt = "...";
+        img.classList.add("media-activa"); //agregar clase
+        contenido.appendChild(img);
+      }
+    }
+
+    btnIzq.addEventListener("click", () => {
+      indice = (indice - 1 + archivos.length) % archivos.length;
+      cargarArchivo(indice);
+    });
+
+    btnDer.addEventListener("click", () => {
+      indice = (indice + 1) % archivos.length;
+      cargarArchivo(indice);
+    });
+
+    // Carga inicial
+    cargarArchivo(indice);
   });
 </script>
 
