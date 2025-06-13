@@ -310,6 +310,33 @@ header {
     margin-top: 70px;
     margin-bottom: 2rem;
   }
+
+  /*---- Estilos Blender y Unity*/
+
+    .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-items {
+    flex-direction: row;
+    gap: 0.7rem;
+    flex-wrap: nowrap;
+  }
+
+  .menu-items li a {
+    font-size: 0.9rem;
+  }
+
+  .contenido-activo {
+    max-height: 300px;
+  }
+
+  .logo{
+    display: none;
+  }
 }
 
 /* --- Estilos específicos para la página Sobre mí --- */
