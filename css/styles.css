@@ -296,7 +296,7 @@ header {
   }
 
   .sobre-mi .text-right {
-    width: 130%;
+    width: 40%;
     padding: 1rem;
   }
 
@@ -363,16 +363,17 @@ body.sobre-mi {
     align-items: flex-start;
     gap: 10rem;
     padding: 2rem;
+    margin: 1%;
     
 }
 
 .sobre-mi .content img {
-    height: auto;
-    max-height: 900px; /* o el valor que te parezca mejor */
-    width: 1000px;
+    max-height: 900px; /* o el valor que te parezca mejor */  
     object-fit: cover;
     align-self: flex-start; /* para que no se estire del todo */
     border-radius: 8px;
+    width: 1066px;
+    height: 600px;
 }
 
 .sobre-mi .text-right {
@@ -380,6 +381,7 @@ body.sobre-mi {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 40%;
 }
 
 .sobre-mi .text-right h2 {
@@ -461,7 +463,7 @@ body.sobre-mi {
 .descripcion-proyecto {
   margin-top: 3rem; /*  margen desde arriba para el texto incluido el texto chico de abajo */
   margin-left: 20px;
-  width: 810px;
+  width: 40%;
   font-size: 1.2rem;
 
 }
@@ -485,4 +487,60 @@ body.sobre-mi {
   height: 100%;
   object-fit: cover; /* Cambiar a 'contain' si prefieres que no recorte */
   display: block;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 40%;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+  margin: 1%;
+  margin-left: 20%;
+}
+
+.footer-section h4, .footer-section h3 {
+  margin-bottom: 15px;
+  color: #f1c40f;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #f1c40f;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  font-size: 0.9em;
 }
