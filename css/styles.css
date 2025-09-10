@@ -500,16 +500,19 @@ body.sobre-mi {
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 40%;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 90%;
   margin: auto;
+  padding: 2%;
+  gap: 2%;
 }
 
 .footer-section {
   flex: 1;
-  min-width: 220px;
+  min-width: 200px;
   margin: 1%;
-  margin-left: 20%;
+  margin-left: 12%;
 }
 
 .footer-section h4, .footer-section h3 {
