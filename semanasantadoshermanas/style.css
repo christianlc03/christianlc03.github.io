@@ -1,0 +1,116 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #d8d8d8;
+    color: #000000;
+    padding: 20px;
+}
+
+h2, p {
+    color: #d8d8d8;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header-content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-btn {
+    cursor: pointer;
+}
+
+.menu-btn-icon {
+    font-size: 24px;
+}
+
+.menu-nav {
+    background-color: #d8d8d8;
+    padding: 10px;
+    display: none;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 100%;
+}
+
+.menu-nav li {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-nav a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+}
+
+tbody td, th{
+    color: #d8d8d8;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+/* Estilos de las secciones */
+main {
+    width: 100%;
+    /*
+    margin: 20px auto;
+    height: 100%;
+    */
+    flex: 1;
+}
+
+section {
+    /*margin-bottom: 20px;
+    padding: 20px;
+    height: 100%;*/
+    background-color: rgba(0, 0, 0, 0.726); /* fondo blanco semitransparente */
+}
+
+section.section1, section.section2, section.section3 {
+    background-color: rgb(0, 0, 0); /* fondo blanco semitransparente */
+}
+
+section h2, p {
+    margin-top: 0;
+    margin-right: 10%;
+}
+
+html.principal {
+    height: 100%;
+    background-image: url('images/esperanza_cautivo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main section {
+    width: 100%;
+    padding: 20px;
+}
