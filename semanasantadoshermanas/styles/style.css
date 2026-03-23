@@ -203,14 +203,35 @@ section.imagen-portada{
     transition: background-color 0.3s;
 }
 
-#cautivo{
-    background-color: #4CAF50; /* Verde bonito */
-}
-
 #borriquita{
     background-color: #af4c4c; /* Verde bonito */
 }
 
+#cautivo{
+    background-color: #4CAF50; /* Verde bonito */
+}
+
+#presentacion{
+    background-color: rgba(45, 48, 146);
+}
+
+#prendimiento{
+    background-color: rgba(127, 62, 10);
+}
+
+#pasion{
+    background-color: rgb(49, 49, 49);
+}
+
 .boton:hover {
     background-color: #45a049; /* Cambio al pasar el mouse */
+}
+
+.tabla-recorrido{
+    border-collapse: collapse;
+}
+
+.tabla-recorrido th, .tabla-recorrido td {
+    border: 1px solid rgb(214, 214, 214);
+    padding: 5px;
 }
