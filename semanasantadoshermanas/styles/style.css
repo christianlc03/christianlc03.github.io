@@ -128,6 +128,30 @@ section.escudo-hermandad {
 section.detalle-hermandad {
     flex: 3;
     flex-direction: row;
+    display: block;
+}
+
+.titulo-hermandad{
+    flex: 3;
+}
+
+.titulo-hermandad h2{
+    font-size: 2em;
+    margin: 0%;
+}
+
+.sede-canonica{
+    flex: 1;
+}
+
+.sede-canonica p{
+    font-size: 1em;
+    margin: 0%;
+}
+
+section.titulo-hermandad-largo{
+    background-color: #000000;
+    text-align: center;
 }
 
 section.imagen-pasos {
