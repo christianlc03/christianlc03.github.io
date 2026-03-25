@@ -247,6 +247,22 @@ section.imagen-portada{
     background-color: rgb(49, 49, 49);
 }
 
+#trescaidas {
+    background-color: rgb(61, 0, 61);
+}
+
+#oracion {
+    background-color: rgb(25, 26, 99);
+}
+
+#lacena {
+    background-color: #af4c4c;
+}
+
+#veracruz {
+    background-color: rgb(49, 49, 49);
+}
+
 .boton:hover {
     background-color: #45a049; /* Cambio al pasar el mouse */
 }
