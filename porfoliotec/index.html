@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: imprescindible para que la web se vea bien en el móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio | (Insertar nombre)</title>
+  <meta name="description" content="(Insertar descripción de la página para Google)">
+  <!-- Ruta del CSS: desde /pages hay que subir un nivel con ../ -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- CABECERA: se repite igual en todas las páginas (aquí no hay includes, se copia y pega) -->
+  <header>
+    <nav class="nav">
+      <a href="index.html"><strong>Christian López</strong></a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul>
+        <li><a href="pages/sobre_mi.html">Sobre mí</a></li>
+        <li><a href="pages/proyectos.html">Proyectos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: presentación principal -->
+    <section>
+      <img src="images/Personal/christian.png" alt="Foto de (Insertar nombre)" width="140" style="border-radius:50%;margin-bottom:1rem">
+      <h1>Hola, soy Christian</h1>
+      <p class="suave">Desarrollador Web</p>
+      <p style="margin:1rem 0">Programador de videojuegos con experiencia en desarrollo de videojuegos en equipo.</br>
+                                Actualmente me encuentro ampliando mis conocimientos en el ámbito del desarrollo web, con interés en combinar creatividad y programación para crear soluciones innovadoras.</p>
+      <!-- El CV está en la carpeta docs -->
+      <a class="boton" href="docs/Curriculum_DAW.pdf" target="_blank">Ver CV</a>
+    </section>
+
+    <!-- EXPERIENCIA: copia una tarjeta por cada trabajo -->
+    <section id="experiencia">
+      <h2>Experiencia</h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Desarrollador Web en prácticas - Grupo Solutia</h3>
+          <p class="suave">2026</p>
+          <p>- Manejo del framework Springboot</p>
+          <p>- Realizar una aplicacion que sirva de agenda personal</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Programador y Animador 3D - 4i Intelligent Insights</h3>
+          <p class="suave">2024</p>
+          <p>- Realizar las distintas animaciones que iba a tener un personaje de un programa</p>
+          <p>- Desarrollar los scripts para que pudiera moverse a la par que se le movian los labios cuando hablaba</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Técnico Informático - Imática Los Palacios</h3>
+          <p class="suave">2022</p>
+          <p>- Despiece de portátiles</p>
+          <p>- Instalación de software en equipos</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS: cada tarjeta enlaza a su página dentro de /pages -->
+    <section id="proyectos">
+      <h2>Proyectos destacados</h2>
+      <p class="suave">(Insertar introducción a tus proyectos)</p>
+      <div class="tarjetas" style="margin-top:1rem">
+        <a class="tarjeta" href="pages/proyectos_desarrollo_web.html"><h3>Proyectos</h3><p>(Insertar descripción)</p></a>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ (resumen) -->
+    <section>
+      <h2>Sobre mí</h2>
+      <p>(Insertar resumen sobre ti)</p>
+      <p><a href="pages/sobre_mi.html">Leer más →</a></p>
+    </section>
+
+    <!-- TECNOLOGÍAS: añade o quita <li> -->
+    <section>
+      <h2>Tecnologías</h2>
+      <ul class="etiquetas">
+        <li>(Insertar tecnología)</li><li>(Insertar tecnología)</li><li>(Insertar tecnología)</li><li>(Insertar tecnología)</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="contenido">
+      <p>
+        <a href="https://www.linkedin.com/in/christian-l%C3%B3pez-carrascoso-275120244/?isSelfProfile=true" target="_blank">LinkedIn</a>
+         · <a href="https://github.com/christianlc03" target="_blank">GitHub</a> 
+         · <a href="mailto:christiancarrascoso.22@gmail.com" target="_blank">Contactame</a> 
+         · <a href="https://www.instagram.com/christianlc03" target="_blank">Instagram</a>
+      </p>
+      <p>© <span id="anio"></span> Christian López Carrascoso · <a href="pages/politica_de_privacidad.html">Política de privacidad</a></p>
+    </div>
+  </footer>
+
+  <!-- El JS va al final del body para que el HTML cargue antes -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: imprescindible para que la web se vea bien en el móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre mí | (Insertar nombre)</title>
+  <meta name="description" content="(Insertar descripción de la página para Google)">
+  <!-- Ruta del CSS: desde /pages hay que subir un nivel con ../ -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- CABECERA: se repite igual en todas las páginas (aquí no hay includes, se copia y pega) -->
+  <header>
+    <nav class="nav">
+      <a href="../index.html"><strong>Christian López</strong></a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul>
+        <li><a href="sobre_mi.html">Sobre mí</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sobre mí</h1>
+    <section style="margin-top:1rem">
+      <p>(Insertar biografía)</p>
+      <p>(Insertar aficiones e intereses)</p>
+      <p><a class="boton" href="../docs/curriculumV3.pdf" target="_blank">Descargar CV</a></p>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="contenido">
+      <p>
+        <a href="https://www.linkedin.com/in/christian-l%C3%B3pez-carrascoso-275120244/?isSelfProfile=true" target="_blank">LinkedIn</a>
+         · <a href="https://github.com/christianlc03" target="_blank">GitHub</a> 
+         · <a href="mailto:christiancarrascoso.22@gmail.com" target="_blank">Contactame</a> 
+         · <a href="https://www.instagram.com/christianlc03" target="_blank">Instagram</a>
+      </p>
+      <p>© <span id="anio"></span> Christian López Carrascoso · <a href="pages/politica_de_privacidad.html">Política de privacidad</a></p>
+    </div>
+  </footer>
+
+  <!-- El JS va al final del body para que el HTML cargue antes -->
+  <script src="../js/script.js"></script>
+</body>
+</html>
