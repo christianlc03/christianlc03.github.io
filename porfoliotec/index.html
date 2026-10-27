@@ -24,14 +24,16 @@
 
   <main>
     <!-- HERO: presentación principal -->
-    <section>
-      <img src="images/Personal/christian.png" alt="Foto de (Insertar nombre)" width="140" style="border-radius:50%;margin-bottom:1rem">
+    <section id="hero">
+      <div class="hero-texto">
       <h1>Hola, soy Christian</h1>
       <p class="suave">Desarrollador Web</p>
       <p style="margin:1rem 0">Programador de videojuegos con experiencia en desarrollo de videojuegos en equipo.</br>
                                 Actualmente me encuentro ampliando mis conocimientos en el ámbito del desarrollo web, con interés en combinar creatividad y programación para crear soluciones innovadoras.</p>
       <!-- El CV está en la carpeta docs -->
       <a class="boton" href="docs/Curriculum_DAW.pdf" target="_blank">Ver CV</a>
+      </div>
+      <img src="images/Personal/christian.png" alt="Foto de (Insertar nombre)" width="140" style="border-radius:30%;margin-bottom:1rem">
     </section>
 
     <!-- EXPERIENCIA: copia una tarjeta por cada trabajo -->
@@ -64,15 +66,25 @@
       <h2>Proyectos destacados</h2>
       <p class="suave">(Insertar introducción a tus proyectos)</p>
       <div class="tarjetas" style="margin-top:1rem">
-        <a class="tarjeta" href="pages/proyectos_desarrollo_web.html"><h3>Proyectos</h3><p>(Insertar descripción)</p></a>
+        <a class="tarjeta" href="pages/proyectos.html"><h3>Proyectos</h3><p>(Insertar descripción)</p></a>
       </div>
     </section>
 
     <!-- SOBRE MÍ (resumen) -->
     <section>
       <h2>Sobre mí</h2>
-      <p>(Insertar resumen sobre ti)</p>
-      <p><a href="pages/sobre_mi.html">Leer más →</a></p>
+      <div id="sobremi">
+        <div class="sobremi-texto">
+          <p>Soy Christian López, desarrollador web con base en Java y ganas de crecer como full stack. 
+            Actualmente estudio Desarrollo de Aplicaciones Web, y antes pasé por  el grado medio de informática y un superior de animación 3D y videojuegos, 
+            que fue el que me enseñó a programar. Trabajo mas cómodo con Java en el backend y también desarrollo frontend,
+            donde ahora estoy aprendiendo React. Soy ordenado, pido feedback pronto y me gusta pelearme con el código hasta entenderlo. 
+            He trabajado en presencial y en remoto. Si tienes un proyecto o una oferta en mente, escríbeme.
+          </p>
+          <p><a href="pages/sobre_mi.html">Leer más →</a></p>
+        </div>
+        <img src="images/Personal/sobre-mi.png" alt="Foto de (Insertar nombre)" width="240">
+      </div>
     </section>
 
     <!-- TECNOLOGÍAS: añade o quita <li> -->
