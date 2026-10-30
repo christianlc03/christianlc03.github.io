@@ -141,9 +141,13 @@ h2 {
 
 .etiquetas li {
   background: var(--superficie);
+  margin-right: 4.2%;
   padding: .3rem .8rem;
+  height: 20%;
   border-radius: 20px;
   font-size: .9rem;
+  box-sizing: border-box;
+  width: 20%;
 }
 
 footer {
